@@ -9,51 +9,40 @@ package model;
  *
  * @author jany-yin
  */
-public class CuentaDeAhorro {
-       private int numeroDeCuenta;
-    private String cliente;
-    private double saldo=50.00;
-    private double tasadeIntereses;
-    private double comisionPorSaldo;
+public class CuentaDeAhorro extends cuentaBasica {
+   
+    protected double saldo;
+    protected double tasadeIntereses;
+    protected double comisionPorSaldo;
     
  
-    private static final double COMISION_POR_SALDO= 50 ;
+    private static final double COMISION_POR_SALDO= 50.00 ;
    
     
-    public CuentaDeAhorro ( int numeroDeCuenta, String cliente){
-        this.numeroDeCuenta = numeroDeCuenta;
-        this.cliente = cliente; 
-        
+    public CuentaDeAhorro (int numeroDeCuenta, String cliente){
+        super(numeroDeCuenta, cliente); 
     }
-    
+    /*
+    @Override
      public double getsaldo (){
          return this.saldo;
      }
- public boolean depositar(double cantidad){
+    @Override
+    public boolean depositar(double cantidad){
        
-              boolean SaldoSuperiorOIgual ;
-        if (this.saldo > cantidad) {
-           SaldoSuperiorOIgual = true;
-        }else {
-          SaldoSuperiorOIgual = false;
-        }
-         this.saldo =this.saldo + cantidad;
+              boolean SaldoSuperiorOIgual = false ;
+    
          return SaldoSuperiorOIgual;
      }
+    @Override
     public boolean retirar(double cantidad){
-        boolean SaldoSuperiorOIgual ;
-        if (this.saldo >= cantidad) {
-           SaldoSuperiorOIgual = true;
-           this.saldo =this.saldo - cantidad;
-        }else {
-          SaldoSuperiorOIgual = false;
-        }
-         
+        boolean SaldoSuperiorOIgual= false;
          return SaldoSuperiorOIgual;
         }
+*/
     public double calcularIntereses (){
            
-           tasadeIntereses = (((4.00/365.00)*30.00) * this.saldo/100.00);
+           tasadeIntereses = (((4.00/365.00)*30.00) * this.getsaldo()/100.00);
            
            return tasadeIntereses;
            
@@ -61,7 +50,7 @@ public class CuentaDeAhorro {
     
     public double calcularComisionPorSaldo(){
        
-        if(this.saldo <1000 )
+        if(this.getsaldo() <1000 )
         {
             comisionPorSaldo = COMISION_POR_SALDO;
         }
@@ -73,7 +62,7 @@ public class CuentaDeAhorro {
    double corte=0;
     public void realizarCorteMensual(){
    
-      corte =((this.saldo + tasadeIntereses )- comisionPorSaldo) ;
+      corte =((this.getsaldo() + tasadeIntereses )- comisionPorSaldo) ;
      
     }
 }

@@ -28,7 +28,7 @@ public class cuentaBasica {
     public boolean depositar(double cantidad){
        
               boolean SaldoSuperiorOIgual ;
-        if (this.saldo > cantidad) {
+        if ( cantidad > 0 ) {
            SaldoSuperiorOIgual = true;
         }else {
           SaldoSuperiorOIgual = false;
@@ -39,11 +39,13 @@ public class cuentaBasica {
     public boolean retirar(double cantidad){
         
         boolean SaldoSuperiorOIgual ;
-        if (this.saldo >= cantidad) {
+        if  (  cantidad > this.saldo) {
            SaldoSuperiorOIgual = true;
-           this.saldo =this.saldo - cantidad;
+           System.out.println("No puede retirar mas de lo que tiene");
+           
         }else {
           SaldoSuperiorOIgual = false;
+          this.saldo =this.saldo - cantidad;
         }
          
          return SaldoSuperiorOIgual;

@@ -26,15 +26,21 @@ public class Main {
            System.out.println("/////////// **Cuenta Basica** //////////////: " );
            
        System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo());
-       System.out.println("Deposito $1000: " +miCuenta.depositar(1000.00)); 
+       miCuenta.depositar(1000.00);
+       System.out.println("Deposito $1000: "); 
        System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo());
-       System.out.println("Deposito $1500.00 : " + miCuenta.depositar(1500.00)); 
+       miCuenta.depositar(1500.00);
+       System.out.println("Deposito $1500.00 : " ); 
        System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo());
-       System.out.println("Retiro $200.00    : " + miCuenta.retirar(200.00));
-       System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo());  
-      System.out.println("Deposito $300.00: " + miCuenta.depositar(300.00));
+       miCuenta.retirar(200.00);
+       System.out.println("Retiro $200.00    : " );
+       System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo()); 
+       miCuenta.depositar(300.00);
+      System.out.println("Deposito $300.00: " );
        System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo());
-       System.out.println("Retiro $1000.00: " +miCuenta.retirar(1000.00));
+             miCuenta.retirar(1000.00);
+       System.out.println("Retiro $1000.00: " );
+         
        System.out.println("Saldo de la cuenta: " + miCuenta.getsaldo());
        
        System.out.println("/////////// **Cuenta de Ahorro** //////////////: " );
