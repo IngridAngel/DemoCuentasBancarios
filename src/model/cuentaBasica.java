@@ -38,17 +38,17 @@ public class cuentaBasica {
      }
     public boolean retirar(double cantidad){
         
-        boolean SaldoSuperiorOIgual ;
+        boolean seRealisoRetiro ;
         if  (  cantidad > this.saldo) {
-           SaldoSuperiorOIgual = true;
+           seRealisoRetiro = true;
            System.out.println("No puede retirar mas de lo que tiene");
            
         }else {
-          SaldoSuperiorOIgual = false;
+          seRealisoRetiro = false;
           this.saldo =this.saldo - cantidad;
         }
          
-         return SaldoSuperiorOIgual;
+         return seRealisoRetiro;
         }
         
 }

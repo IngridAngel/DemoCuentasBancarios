@@ -7,6 +7,7 @@ package democuentabancaria1;
 
 import java.util.Scanner;
 import model.CuentaDeAhorro;
+import model.CuentaDeCheques;
 import model.cuentaBasica;
 
 /**
@@ -66,6 +67,24 @@ public class Main {
      
       System.out.println("Saldo: " +  miAhorro.getsaldo());
        System.out.println("---------------------------------- ") ;
+       
+       
+       
+        CuentaDeCheques misCheques = new CuentaDeCheques(1245,"Mar");
+           System.out.println("/////////// **Cuenta Mis Cheques ** //////////////: " );
+    
+       misCheques.depositar(2000.00);
+       System.out.println("Deposito $2000: "); 
+       System.out.println("Saldo de la cuenta cheques: " + misCheques.getsaldo());
+        misCheques.retirar(100.00);
+       System.out.println("Deposito $100: "); 
+       System.out.println("Saldo de la cuenta cheques: " + misCheques.getsaldo());
+      misCheques.retirar(100.00); 
+      
+       System.out.println("Deposito $100: ");  
+       System.out.println("Saldo de la cuenta cheques: " + misCheques.getsaldo());
+       System.out.println("Comision: " +misCheques.comisionPorChequesRebotados());
+       
     }
     
     
